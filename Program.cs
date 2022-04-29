@@ -39,7 +39,6 @@ namespace OOP4_2
                         break;
                 }
             }
-
         }
     }
 
@@ -59,7 +58,6 @@ namespace OOP4_2
 
         public void OutputCardsPlayer(Queue<string> cardsPlaer)
         {
-
             Console.WriteLine("\nВы выбрали карты");
             foreach (string card in cardsPlaer)
             {
@@ -112,9 +110,7 @@ namespace OOP4_2
             menu.OutputCardsPlayer(_cardsPlayer);
            int sum= cards.SumCardsPlayer(_cardsPlayer);
             menu.OutputCardsPlayer(sum);
-
         }
-
     }
 
     class Cards
@@ -169,7 +165,7 @@ namespace OOP4_2
 
         public int SumCardsPlayer(Queue<string> cardsPlaer)
         {
-            int sum = 0;
+            int sumCards = 0;
             int cardsPlaerlength = cardsPlaer.Count;
 
             for (int i = 0; i <cardsPlaerlength ; i++)
@@ -178,12 +174,9 @@ namespace OOP4_2
 
                 _cards.TryGetValue(cardsPlaer.Dequeue(), out temp);
 
-                sum += temp;
+                sumCards += temp;
             }
-            return sum;
+            return sumCards;
         }
-
     }
-
-
 }
