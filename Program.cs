@@ -7,7 +7,6 @@ namespace OOP4_2
     {
         static void Main(string[] args)
         {
-
             Menu menu = new Menu();
             Game game = new Game();
 
@@ -17,7 +16,6 @@ namespace OOP4_2
 
             while (isContinueCycle)
             {
-
                 string userInput = Console.ReadLine();
 
                 switch (userInput)
@@ -73,7 +71,6 @@ namespace OOP4_2
 
     class Game
     {
-
         private Queue<string> _sufledDeck;
         private Queue<string> _cardsPlayer = new Queue<string>();
 
@@ -115,7 +112,6 @@ namespace OOP4_2
 
     class Cards
     {
-
         private Dictionary<string, int> _cards = new Dictionary<string, int>();
         private List<string> _cardsList = new List<string>();
 
