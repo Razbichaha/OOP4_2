@@ -22,7 +22,7 @@ namespace OOP4_2
                 {
                     case "еще":
 
-                        isContinueCycle = game.TakeCard();
+                        isContinueCycle = game.TryGetCard();
 
                         break;
                     case "все":
@@ -32,7 +32,7 @@ namespace OOP4_2
                         break;
                     default:
 
-                        menu.OutputAWarning();
+                        menu.OutputWarning();
 
                         break;
                 }
@@ -49,7 +49,7 @@ namespace OOP4_2
             Console.WriteLine("Остановить получение карт - все");
         }
 
-        public void OutputAWarning()
+        public void OutputWarning()
         {
             Console.WriteLine("Введена не верная команда");
         }
@@ -74,14 +74,15 @@ namespace OOP4_2
         private Queue<string> _sufledDeck;
         private Queue<string> _cardsPlayer = new Queue<string>();
 
-        Cards cards = new Cards();
+        Cards _cards = new Cards();
+        Menu _menu = new Menu();
 
         public Game()
         {
-            _sufledDeck = new Queue<string>(cards.GetSufledDeckCards());
+            _sufledDeck = new Queue<string>(_cards.GetSufledDeckCards());
         }
 
-        public bool TakeCard()
+        public bool TryGetCard()
         {
             bool isContinueCycle = true;
 
@@ -100,13 +101,11 @@ namespace OOP4_2
             return isContinueCycle;
         }
 
-        Menu menu = new Menu();
-
         public void StopGame()
         {
-            menu.OutputCardsPlayer(_cardsPlayer);
-           int sum= cards.SumCardsPlayer(_cardsPlayer);
-            menu.OutputCardsPlayer(sum);
+            _menu.OutputCardsPlayer(_cardsPlayer);
+           int sum= _cards.SumCardsPlayer(_cardsPlayer);
+            _menu.OutputCardsPlayer(sum);
         }
     }
 
