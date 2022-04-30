@@ -74,8 +74,8 @@ namespace OOP4_2
         private Queue<string> _sufledDeck;
         private Queue<string> _cardsPlayer = new Queue<string>();
 
-        Cards _cards = new Cards();
-        Menu _menu = new Menu();
+        private Cards _cards = new Cards();
+        private Menu _menu = new Menu();
 
         public Game()
         {
@@ -104,7 +104,7 @@ namespace OOP4_2
         public void StopGame()
         {
             _menu.OutputCardsPlayer(_cardsPlayer);
-           int sum= _cards.SumCardsPlayer(_cardsPlayer);
+            int sum = _cards.SumCardsPlayer(_cardsPlayer);
             _menu.OutputCardsPlayer(sum);
         }
     }
@@ -163,7 +163,7 @@ namespace OOP4_2
             int sumCards = 0;
             int cardsPlaerlength = cardsPlaer.Count;
 
-            for (int i = 0; i <cardsPlaerlength ; i++)
+            for (int i = 0; i < cardsPlaerlength; i++)
             {
                 int temp;
 
